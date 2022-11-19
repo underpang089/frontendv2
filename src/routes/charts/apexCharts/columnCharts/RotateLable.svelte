@@ -1,7 +1,7 @@
 <script>
-	import {onMount} from 'svelte';
+	import { onMount } from "svelte";
 	export let dataColors;
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 
 	function getChartColorsArray(colors) {
 		if (browser) {
@@ -117,9 +117,12 @@
 		},
 	};
 	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#rotatelable"), options)
-  		chart.render()
-	})
+		const chart = new ApexCharts(
+			document.querySelector("#rotatelable"),
+			options
+		);
+		chart.render();
+	});
 </script>
 
-<div id="rotatelable" class="apex-charts" dir="ltr"></div>
+<div id="rotatelable" class="apex-charts" dir="ltr" />

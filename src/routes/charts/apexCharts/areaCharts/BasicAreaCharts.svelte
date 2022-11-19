@@ -1,12 +1,11 @@
 <script>
-	import {onMount} from 'svelte';
+	import { onMount } from "svelte";
 	import allseries from "../series";
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 	export let dataColors;
 
 	function getChartColorsArray(colors) {
 		if (browser) {
-			
 			return colors.map(function (value) {
 				var newValue = value.replace(" ", "");
 				if (newValue.indexOf(",") === -1) {
@@ -80,9 +79,12 @@
 		colors: BasicAreaChartsColors,
 	};
 	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#basicareachart"), options)
-  		chart.render()
-	})
+		const chart = new ApexCharts(
+			document.querySelector("#basicareachart"),
+			options
+		);
+		chart.render();
+	});
 </script>
 
-<div id="basicareachart" class="apex-charts" dir="ltr"></div>
+<div id="basicareachart" class="apex-charts" dir="ltr" />

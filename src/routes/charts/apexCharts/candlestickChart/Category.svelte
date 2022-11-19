@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from "svelte";
 	import dayjs from "dayjs";
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 
 	export let dataColors;
 	function getChartColorsArray(colors) {

@@ -1,7 +1,7 @@
 <script>
     import Doughnut from "svelte-chartjs/src/Doughnut.svelte";
     export let dataColors;
-    import { browser } from "$app/env";
+    import { browser } from "$app/environment";
 
     function getChartColorsArray(colors) {
         if (browser) {

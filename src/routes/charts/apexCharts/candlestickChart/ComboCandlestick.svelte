@@ -1,7 +1,7 @@
 <script>
 	import allseries from "../series";
 	import { onMount } from "svelte";
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 
 	export let dataColors;
 	function getChartColorsArray(colors) {
@@ -34,7 +34,7 @@
 
 	onMount(() => {
 		var chartCandlestickBasicColors = getChartColorsArray(dataColors);
-		
+
 		var options = {
 			chart: {
 				type: "candlestick",

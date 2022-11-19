@@ -11,7 +11,7 @@
 	import MasonryLayout from "svelte-masonry-layout";
 	import BreadCrumb from "../../Components/Common/BreadCrumb.svelte";
 	import Link from "svelte-link";
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 
 	const breakpointColumnsObj = {
 		default: 3,
@@ -38,28 +38,27 @@
 		}
 	}
 
-	import img1 from '../../assets/images/small/img-1.jpg';
-	import img2 from '../../assets/images/small/img-2.jpg';
-	import img3 from '../../assets/images/small/img-3.jpg';
-	import img4 from '../../assets/images/small/img-4.jpg';
-	import img5 from '../../assets/images/small/img-5.jpg';
-	import img6 from '../../assets/images/small/img-6.jpg';
-	import img7 from '../../assets/images/small/img-7.jpg';
-	import img8 from '../../assets/images/small/img-8.jpg';
-	import img9 from '../../assets/images/small/img-9.jpg';
-	import img10 from '../../assets/images/small/img-10.jpg';
-	import img11 from '../../assets/images/small/img-11.jpg';
-	import img12 from '../../assets/images/small/img-12.jpg';
-	import avatar1 from '../../assets/images/users/avatar-1.jpg';
-	import avatar2 from '../../assets/images/users/avatar-2.jpg';
-	import avatar3 from '../../assets/images/users/avatar-3.jpg';
-	import avatar4 from '../../assets/images/users/avatar-4.jpg';
-	import avatar5 from '../../assets/images/users/avatar-5.jpg';
-	import avatar6 from '../../assets/images/users/avatar-6.jpg';
-	import avatar7 from '../../assets/images/users/avatar-7.jpg';
-	import avatar8 from '../../assets/images/users/avatar-8.jpg';
-	import logosm from '../../assets/images/logo-sm.png';
-
+	import img1 from "../../assets/images/small/img-1.jpg";
+	import img2 from "../../assets/images/small/img-2.jpg";
+	import img3 from "../../assets/images/small/img-3.jpg";
+	import img4 from "../../assets/images/small/img-4.jpg";
+	import img5 from "../../assets/images/small/img-5.jpg";
+	import img6 from "../../assets/images/small/img-6.jpg";
+	import img7 from "../../assets/images/small/img-7.jpg";
+	import img8 from "../../assets/images/small/img-8.jpg";
+	import img9 from "../../assets/images/small/img-9.jpg";
+	import img10 from "../../assets/images/small/img-10.jpg";
+	import img11 from "../../assets/images/small/img-11.jpg";
+	import img12 from "../../assets/images/small/img-12.jpg";
+	import avatar1 from "../../assets/images/users/avatar-1.jpg";
+	import avatar2 from "../../assets/images/users/avatar-2.jpg";
+	import avatar3 from "../../assets/images/users/avatar-3.jpg";
+	import avatar4 from "../../assets/images/users/avatar-4.jpg";
+	import avatar5 from "../../assets/images/users/avatar-5.jpg";
+	import avatar6 from "../../assets/images/users/avatar-6.jpg";
+	import avatar7 from "../../assets/images/users/avatar-7.jpg";
+	import avatar8 from "../../assets/images/users/avatar-8.jpg";
+	import logosm from "../../assets/images/logo-sm.png";
 </script>
 
 <svelte:head>
@@ -108,11 +107,13 @@
 						</p>
 					</CardBody>
 					<div class="card-footer">
-						<Link href="#" class="card-link link-secondary">Read More <i
+						<Link href="#" class="card-link link-secondary"
+							>Read More <i
 								class="ri-arrow-right-s-line ms-1 align-middle lh-1"
 							/></Link
 						>
-						<Link href="#" class="card-link link-success">Bookmark <i
+						<Link href="#" class="card-link link-success"
+							>Bookmark <i
 								class="ri-bookmark-line align-middle ms-1 lh-1"
 							/></Link
 						>
@@ -150,11 +151,7 @@
 							Development
 						</h6>
 					</CardBody>
-					<img
-						class="img-fluid"
-						src={img4}
-						alt="Card cap"
-					/>
+					<img class="img-fluid" src={img4} alt="Card cap" />
 					<CardBody>
 						<p class="card-text">
 							Objectively pursue diverse catalysts for change for
@@ -163,11 +160,13 @@
 						</p>
 					</CardBody>
 					<div class="card-footer">
-						<Link href="#" class="card-link link-secondary">Read More <i
+						<Link href="#" class="card-link link-secondary"
+							>Read More <i
 								class="ri-arrow-right-s-line ms-1 align-middle lh-1"
 							/></Link
 						>
-						<Link href="#" class="card-link link-success">Bookmark <i
+						<Link href="#" class="card-link link-success"
+							>Bookmark <i
 								class="ri-bookmark-line align-middle ms-1 lh-1"
 							/></Link
 						>
@@ -208,7 +207,8 @@
 							<h6 class="mb-1">$15,548</h6>
 							<p class="card-text text-muted">Expense Account</p>
 							<Link href="#" class="btn btn-primary btn-sm"
-								>See Details</Link>
+								>See Details</Link
+							>
 						</Card>
 					</Col>
 					<Col>
@@ -231,7 +231,8 @@
 							<h6 class="mb-1">$8,785</h6>
 							<p class="card-text text-muted">Expense Account</p>
 							<Link href="#" class="btn btn-primary btn-sm"
-								>See Details</Link>
+								>See Details</Link
+							>
 						</Card>
 					</Col>
 					<Col>
@@ -254,7 +255,8 @@
 							<h6 class="mb-1">$1,542</h6>
 							<p class="card-text text-muted">Expense Account</p>
 							<Link href="#" class="btn btn-primary btn-sm"
-								>See Details</Link>
+								>See Details</Link
+							>
 						</Card>
 					</Col>
 					<Col>
@@ -279,7 +281,8 @@
 							<h6 class="mb-1">$798</h6>
 							<p class="card-text text-muted">Expense Account</p>
 							<Link href="#" class="btn btn-primary btn-sm"
-								>See Details</Link>
+								>See Details</Link
+							>
 						</Card>
 					</Col>
 					<Col>
@@ -300,7 +303,8 @@
 							<h6 class="mb-1">$2,856</h6>
 							<p class="card-text text-muted">Expense Account</p>
 							<Link href="#" class="btn btn-primary btn-sm"
-								>See Details</Link>
+								>See Details</Link
+							>
 						</Card>
 					</Col>
 				</Row>
@@ -320,7 +324,8 @@
 					<Col lg={6} xxl={4}>
 						<Card class="card-body">
 							<div class="avatar-sm mb-3">
-								<div class="avatar-title bg-soft-success text-success fs-17 rounded"
+								<div
+									class="avatar-title bg-soft-success text-success fs-17 rounded"
 								>
 									<i class="ri-smartphone-line" />
 								</div>
@@ -331,13 +336,15 @@
 								Appropriately communicate one-to-one technology.
 							</p>
 							<Link href="#" class="btn btn-success"
-								>Apply Now</Link>
+								>Apply Now</Link
+							>
 						</Card>
 					</Col>
 					<Col lg={6} xxl={4}>
 						<div class="card card-body text-center">
 							<div class="avatar-sm mx-auto mb-3">
-								<div class="avatar-title bg-soft-success text-success fs-17 rounded"
+								<div
+									class="avatar-title bg-soft-success text-success fs-17 rounded"
 								>
 									<i class="ri-add-line" />
 								</div>
@@ -347,13 +354,15 @@
 								Send a link to apply on mobile device.
 								Appropriately communicate one-to-one technology.
 							</p>
-							<Link href="#" class="btn btn-success">Add New</Link>
+							<Link href="#" class="btn btn-success">Add New</Link
+							>
 						</div>
 					</Col>
 					<Col lg={6} xxl={4}>
 						<div class="card card-body text-end">
 							<div class="avatar-sm ms-auto mb-3">
-								<div class="avatar-title bg-soft-success text-success fs-17 rounded"
+								<div
+									class="avatar-title bg-soft-success text-success fs-17 rounded"
 								>
 									<i class="ri-gift-fill" />
 								</div>
@@ -363,7 +372,8 @@
 								Send a link to apply on mobile device.
 								Appropriately communicate one-to-one technology.
 							</p>
-							<Link href="#" class="btn btn-success">Add New</Link>
+							<Link href="#" class="btn btn-success">Add New</Link
+							>
 						</div>
 					</Col>
 				</Row>
@@ -513,7 +523,8 @@
 						</p>
 					</CardBody>
 					<div class="card-footer text-center">
-						<Link href="#" class="link-secondary">View All Notification (2) <i
+						<Link href="#" class="link-secondary"
+							>View All Notification (2) <i
 								class="ri-arrow-right-s-line align-middle ms-1 lh-1"
 							/></Link
 						>
@@ -537,7 +548,8 @@
 							endless nights and hours to create a <Link
 								href="#"
 								class="text-decoration-underline"
-								><b>Fantastic Design</b></Link> by using complicated 3D elements. Flat design is your
+								><b>Fantastic Design</b></Link
+							> by using complicated 3D elements. Flat design is your
 							friend. Remember that. And the great thing about flat
 							design is that it has become more and more popular over
 							the years.
@@ -575,9 +587,11 @@
 							<Link
 								href="#"
 								class="btn btn-link btn-sm link-success"
-								><i class="ri-close-line align-middle lh-1" /> Close</Link>
+								><i class="ri-close-line align-middle lh-1" /> Close</Link
+							>
 							<Link href="#" class="btn btn-primary btn-sm"
-								>Read More</Link>
+								>Read More</Link
+							>
 						</div>
 					</div>
 				</Card>
@@ -609,16 +623,32 @@
 					<div class="card-footer text-center">
 						<ul class="list-inline mb-0">
 							<li class="list-inline-item">
-								<Link href="#" class="lh-1 align-middle link-secondary"><i class="ri-facebook-fill"></i></Link>
+								<Link
+									href="#"
+									class="lh-1 align-middle link-secondary"
+									><i class="ri-facebook-fill" /></Link
+								>
 							</li>
 							<li class="list-inline-item">
-								<Link href="#" class="lh-1 align-middle link-success"><i class="ri-whatsapp-line"></i></Link>
+								<Link
+									href="#"
+									class="lh-1 align-middle link-success"
+									><i class="ri-whatsapp-line" /></Link
+								>
 							</li>
 							<li class="list-inline-item">
-								<Link href="#" class="lh-1 align-middle link-primary"><i class="ri-linkedin-fill"></i></Link>
+								<Link
+									href="#"
+									class="lh-1 align-middle link-primary"
+									><i class="ri-linkedin-fill" /></Link
+								>
 							</li>
 							<li class="list-inline-item">
-								<Link href="#" class="lh-1 align-middle link-danger"><i class="ri-slack-fill"></i></Link>
+								<Link
+									href="#"
+									class="lh-1 align-middle link-danger"
+									><i class="ri-slack-fill" /></Link
+								>
 							</li>
 						</ul>
 					</div>
@@ -648,16 +678,32 @@
 					<div class="card-footer text-center">
 						<ul class="list-inline mb-0">
 							<li class="list-inline-item">
-								<Link href="#" class="lh-1 align-middle link-secondary"><i class="ri-facebook-fill"></i></Link>
+								<Link
+									href="#"
+									class="lh-1 align-middle link-secondary"
+									><i class="ri-facebook-fill" /></Link
+								>
 							</li>
 							<li class="list-inline-item">
-								<Link href="#" class="lh-1 align-middle link-success"><i class="ri-whatsapp-line"></i></Link>
+								<Link
+									href="#"
+									class="lh-1 align-middle link-success"
+									><i class="ri-whatsapp-line" /></Link
+								>
 							</li>
 							<li class="list-inline-item">
-								<Link href="#" class="lh-1 align-middle link-primary"><i class="ri-linkedin-fill"></i></Link>
+								<Link
+									href="#"
+									class="lh-1 align-middle link-primary"
+									><i class="ri-linkedin-fill" /></Link
+								>
 							</li>
 							<li class="list-inline-item">
-								<Link href="#" class="lh-1 align-middle link-danger"><i class="ri-slack-fill"></i></Link>
+								<Link
+									href="#"
+									class="lh-1 align-middle link-danger"
+									><i class="ri-slack-fill" /></Link
+								>
 							</li>
 						</ul>
 					</div>
@@ -687,16 +733,32 @@
 					<div class="card-footer text-center">
 						<ul class="list-inline mb-0">
 							<li class="list-inline-item">
-								<Link href="#" class="lh-1 align-middle link-secondary"><i class="ri-facebook-fill"></i></Link>
+								<Link
+									href="#"
+									class="lh-1 align-middle link-secondary"
+									><i class="ri-facebook-fill" /></Link
+								>
 							</li>
 							<li class="list-inline-item">
-								<Link href="#" class="lh-1 align-middle link-success"><i class="ri-whatsapp-line"></i></Link>
+								<Link
+									href="#"
+									class="lh-1 align-middle link-success"
+									><i class="ri-whatsapp-line" /></Link
+								>
 							</li>
 							<li class="list-inline-item">
-								<Link href="#" class="lh-1 align-middle link-primary"><i class="ri-linkedin-fill"></i></Link>
+								<Link
+									href="#"
+									class="lh-1 align-middle link-primary"
+									><i class="ri-linkedin-fill" /></Link
+								>
 							</li>
 							<li class="list-inline-item">
-								<Link href="#" class="lh-1 align-middle link-danger"><i class="ri-slack-fill"></i></Link>
+								<Link
+									href="#"
+									class="lh-1 align-middle link-danger"
+									><i class="ri-slack-fill" /></Link
+								>
 							</li>
 						</ul>
 					</div>
@@ -770,7 +832,8 @@
 					<Collapse
 						toggler="#collapseexample1"
 						class="card-body"
-						isOpen>
+						isOpen
+					>
 						<div class="d-flex">
 							<div class="flex-shrink-0">
 								<i
@@ -884,7 +947,8 @@
 					<Collapse
 						class="card-body"
 						toggler="#collapseExample2"
-						isOpen>
+						isOpen
+					>
 						<div class="d-flex">
 							<div class="flex-shrink-0">
 								<i
@@ -992,7 +1056,8 @@
 					<Collapse
 						class="card-body"
 						toggler="#collapseExample3"
-						isOpen>
+						isOpen
+					>
 						<div class="d-flex">
 							<div class="flex-shrink-0">
 								<i
@@ -1054,7 +1119,9 @@
 								src={img12}
 								alt="Card"
 							/>
-							<div class="card-img-overlay p-0 d-flex flex-column">
+							<div
+								class="card-img-overlay p-0 d-flex flex-column"
+							>
 								<CardHeader class="bg-transparent">
 									<h4 class="card-title text-white mb-0">
 										Design your apps in your own way
@@ -1073,7 +1140,8 @@
 										>
 									</p>
 								</CardBody>
-								<div class="card-footer bg-transparent text-center"
+								<div
+									class="card-footer bg-transparent text-center"
 								>
 									<Link href="#" class="link-light"
 										>Read More <i
@@ -1591,7 +1659,8 @@
 							<Link href="#" class="link-light"
 								>Connect Now <i
 									class="ri-arrow-right-s-line align-middle lh-1"
-								/></Link>
+								/></Link
+							>
 						</div>
 					</div>
 				</Card>
@@ -1620,7 +1689,8 @@
 							<Link href="#" class="link-light"
 								>Connect Now <i
 									class="ri-arrow-right-s-line align-middle lh-1"
-								/></Link>
+								/></Link
+							>
 						</div>
 					</div>
 				</Card>
@@ -1649,7 +1719,8 @@
 							<Link href="#" class="link-light"
 								>Connect Now <i
 									class="ri-arrow-right-s-line align-middle lh-1"
-								/></Link>
+								/></Link
+							>
 						</div>
 					</div>
 				</Card>
@@ -1682,7 +1753,8 @@
 							<Link href="#" class="link-light"
 								>Connect Now <i
 									class="ri-arrow-right-s-line align-middle lh-1"
-								/></Link>
+								/></Link
+							>
 						</div>
 					</div>
 				</Card>
@@ -1712,7 +1784,8 @@
 							<Link href="#" class="link-dark"
 								>Connect Now <i
 									class="ri-arrow-right-s-line align-middle lh-1"
-								/></Link>
+								/></Link
+							>
 						</div>
 					</div>
 				</Card>
@@ -1830,7 +1903,8 @@
 						<h6 class="card-title mb-0">
 							Check your Payment <span
 								class="badge bg-warning align-middle fs-10"
-								>Pending</span>
+								>Pending</span
+							>
 						</h6>
 					</CardHeader>
 					<CardBody>
@@ -1844,7 +1918,8 @@
 							<Link href="#" class="link-warning fw-medium"
 								>Read More <i
 									class="ri-arrow-right-line align-middle"
-								/></Link>
+								/></Link
+							>
 						</div>
 					</CardBody>
 				</Card>
@@ -1855,7 +1930,8 @@
 						<h6 class="card-title mb-0">
 							Your Ordered Cancel <span
 								class="badge bg-danger align-middle fs-10"
-								>Cancel</span>
+								>Cancel</span
+							>
 						</h6>
 					</CardHeader>
 					<CardBody>
@@ -1869,7 +1945,8 @@
 							<Link href="#" class="link-danger fw-medium"
 								>Read More <i
 									class="ri-arrow-right-line align-middle"
-								/></Link>
+								/></Link
+							>
 						</div>
 					</CardBody>
 				</Card>
@@ -1890,7 +1967,8 @@
 							<Link href="#" class="link-dark fw-medium"
 								>Read More <i
 									class="ri-arrow-right-line align-middle"
-								/></Link>
+								/></Link
+							>
 						</div>
 					</CardBody>
 				</Card>
@@ -1914,7 +1992,8 @@
 							<Link href="#" class="link-secondary fw-medium"
 								>Read More <i
 									class="ri-arrow-right-line align-middle"
-								/></Link>
+								/></Link
+							>
 						</div>
 					</CardBody>
 				</Card>
@@ -1935,7 +2014,8 @@
 							<Link href="#" class="link-dark fw-medium"
 								>Read More <i
 									class="ri-arrow-right-line align-middle"
-								/></Link>
+								/></Link
+							>
 						</div>
 					</CardBody>
 				</Card>
@@ -2043,11 +2123,7 @@
 							A day in the of a professional fashion designer
 						</h4>
 					</CardHeader>
-					<img
-						class="img-fluid"
-						src={img11}
-						alt="Card cap"
-					/>
+					<img class="img-fluid" src={img11} alt="Card cap" />
 					<CardBody>
 						<p class="card-text">
 							This may be the most commonly encountered tip I
@@ -2059,7 +2135,8 @@
 					<div class="card-footer">
 						<p class="card-text">
 							<small class="text-muted"
-								>Last updated 3 mins ago</small>
+								>Last updated 3 mins ago</small
+							>
 						</p>
 					</div>
 				</Card>
@@ -2085,7 +2162,8 @@
 					<div class="card-footer">
 						<p class="card-text">
 							<small class="text-muted"
-								>Last updated 3 mins ago</small>
+								>Last updated 3 mins ago</small
+							>
 						</p>
 					</div>
 				</Card>
@@ -2111,7 +2189,8 @@
 					<div class="card-footer">
 						<p class="card-text">
 							<small class="text-muted"
-								>Last updated 3 mins ago</small>
+								>Last updated 3 mins ago</small
+							>
 						</p>
 					</div>
 				</Card>
@@ -2132,7 +2211,8 @@
 					<MasonryLayout
 						breakpointCols={breakpointColumnsObj}
 						gap="15px"
-						class="my-masonry-grid">
+						class="my-masonry-grid"
+					>
 						<Col>
 							<Card>
 								<img
@@ -2181,11 +2261,7 @@
 						</Col>
 						<Col>
 							<Card>
-								<img
-									src={img7}
-									class="card-img"
-									alt="..."
-								/>
+								<img src={img7} class="card-img" alt="..." />
 							</Card>
 						</Col>
 						<Card>
@@ -2341,11 +2417,7 @@
 				<Row>
 					<Col xl={4}>
 						<Card>
-							<img
-								src={img3}
-								class="card-img-top"
-								alt="..."
-							/>
+							<img src={img3} class="card-img-top" alt="..." />
 							<CardBody>
 								<h5 class="card-title">
 									Card with stretched link

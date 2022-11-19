@@ -1,9 +1,9 @@
-<script>
-	import {onMount} from 'svelte';
-	import { browser } from "$app/env";
+<script lang="ts">
+	import { onMount } from "svelte";
+	import { browser } from "$app/environment";
 	export let dataColors;
 
-	function getChartColorsArray(colors) {
+	function getChartColorsArray(colors: Array<string>) {
 		if (browser) {
 			return colors.map(function (value) {
 				var newValue = value.replace(" ", "");
@@ -586,7 +586,7 @@
 			showAlways: true,
 			labels: {
 				show: true,
-				formatter: function (val) {
+				formatter: function (val: number) {
 					return (val / 1000000).toFixed(0);
 				},
 			},
@@ -603,16 +603,19 @@
 		tooltip: {
 			shared: false,
 			y: {
-				formatter: function (val) {
+				formatter: function (val: number) {
 					return (val / 1000000).toFixed(0);
 				},
 			},
 		},
 	};
 	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#line_chart_zoomable"), options)
-  		chart.render()
-	})
+		const chart = new ApexCharts(
+			document.querySelector("#line_chart_zoomable"),
+			options
+		);
+		chart.render();
+	});
 </script>
 
-<div id="line_chart_zoomable" class="apex-charts" dir="ltr"></div>
+<div id="line_chart_zoomable" class="apex-charts" dir="ltr" />

@@ -1,7 +1,7 @@
 <script>
     import Pie from "svelte-chartjs/src/Pie.svelte";
     export let dataColors;
-    import { browser } from "$app/env";
+    import { browser } from "$app/environment";
 
     function getChartColorsArray(colors) {
         if (browser) {

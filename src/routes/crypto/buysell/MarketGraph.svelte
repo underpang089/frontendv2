@@ -1,35 +1,35 @@
 <script>
-	import {onMount} from 'svelte';
+	import { onMount } from "svelte";
 	import { Card, CardBody, CardHeader, Col, Row } from "sveltestrap";
-    export let dataColors;
-    import { browser } from "$app/env";
-    function getChartColorsArray(colors) {
-        if (browser) {
-            return colors.map(function (value) {
-                var newValue = value.replace(" ", "");
-                if (newValue.indexOf(",") === -1) {
-                    var color = getComputedStyle(
-                        document.documentElement
-                    ).getPropertyValue(newValue);
-                    if (color.indexOf("#") !== -1)
-                        color = color.replace(" ", "");
-                    if (color) return color;
-                    else return newValue;
-                } else {
-                    var val = value.split(",");
-                    if (val.length === 2) {
-                        var rgbaColor = getComputedStyle(
-                            document.documentElement
-                        ).getPropertyValue(val[0]);
-                        rgbaColor = "rgba(" + rgbaColor + "," + val[1] + ")";
-                        return rgbaColor;
-                    } else {
-                        return newValue;
-                    }
-                }
-            });
-        }
-    }
+	export let dataColors;
+	import { browser } from "$app/environment";
+	function getChartColorsArray(colors) {
+		if (browser) {
+			return colors.map(function (value) {
+				var newValue = value.replace(" ", "");
+				if (newValue.indexOf(",") === -1) {
+					var color = getComputedStyle(
+						document.documentElement
+					).getPropertyValue(newValue);
+					if (color.indexOf("#") !== -1)
+						color = color.replace(" ", "");
+					if (color) return color;
+					else return newValue;
+				} else {
+					var val = value.split(",");
+					if (val.length === 2) {
+						var rgbaColor = getComputedStyle(
+							document.documentElement
+						).getPropertyValue(val[0]);
+						rgbaColor = "rgba(" + rgbaColor + "," + val[1] + ")";
+						return rgbaColor;
+					} else {
+						return newValue;
+					}
+				}
+			});
+		}
+	}
 	var seriesdata = [
 		{
 			data: [
@@ -276,73 +276,76 @@
 			],
 		},
 	];
-	
+
 	onMount(() => {
-	var MarketchartColors = getChartColorsArray(dataColors);
+		var MarketchartColors = getChartColorsArray(dataColors);
 
 		var options = {
-		chart: {
-			type: "candlestick",
-			height: 360,
-			toolbar: {
-				show: false,
-			},
-		},
-		series: seriesdata,
-		plotOptions: {
-			candlestick: {
-				colors: {
-					upward: MarketchartColors[0],
-					downward: MarketchartColors[1],
+			chart: {
+				type: "candlestick",
+				height: 360,
+				toolbar: {
+					show: false,
 				},
 			},
-		},
-		xaxis: {
-			type: "datetime",
-		},
-		yaxis: {
+			series: seriesdata,
+			plotOptions: {
+				candlestick: {
+					colors: {
+						upward: MarketchartColors[0],
+						downward: MarketchartColors[1],
+					},
+				},
+			},
+			xaxis: {
+				type: "datetime",
+			},
+			yaxis: {
+				tooltip: {
+					enabled: true,
+				},
+				labels: {
+					formatter: function (value) {
+						return "$" + value;
+					},
+				},
+			},
 			tooltip: {
-				enabled: true,
+				shared: true,
+				y: [
+					{
+						formatter: function (y) {
+							if (typeof y !== "undefined") {
+								return y.toFixed(0);
+							}
+							return y;
+						},
+					},
+					{
+						formatter: function (y) {
+							if (typeof y !== "undefined") {
+								return "$" + y.toFixed(2) + "k";
+							}
+							return y;
+						},
+					},
+					{
+						formatter: function (y) {
+							if (typeof y !== "undefined") {
+								return y.toFixed(0) + " Sales";
+							}
+							return y;
+						},
+					},
+				],
 			},
-			labels: {
-				formatter: function (value) {
-					return "$" + value;
-				},
-			},
-		},
-		tooltip: {
-			shared: true,
-			y: [
-				{
-					formatter: function (y) {
-						if (typeof y !== "undefined") {
-							return y.toFixed(0);
-						}
-						return y;
-					},
-				},
-				{
-					formatter: function (y) {
-						if (typeof y !== "undefined") {
-							return "$" + y.toFixed(2) + "k";
-						}
-						return y;
-					},
-				},
-				{
-					formatter: function (y) {
-						if (typeof y !== "undefined") {
-							return y.toFixed(0) + " Sales";
-						}
-						return y;
-					},
-				},
-			],
-		},
-	};
-		const chart = new ApexCharts(document.querySelector("#marketgraph"), options)
-  		chart.render()
-	})
+		};
+		const chart = new ApexCharts(
+			document.querySelector("#marketgraph"),
+			options
+		);
+		chart.render();
+	});
 </script>
 
 <Col xxl={9}>
@@ -407,7 +410,9 @@
 					</Col>
 					<Col xs={6}>
 						<div class="d-flex">
-							<div class="d-flex justify-content-end text-end flex-wrap gap-4 ms-auto">
+							<div
+								class="d-flex justify-content-end text-end flex-wrap gap-4 ms-auto"
+							>
 								<div class="pe-3">
 									<h6 class="mb-2 text-muted">High</h6>
 									<h5 class="text-success mb-0">
@@ -434,8 +439,7 @@
 		</CardBody>
 		<CardBody class="p-0 pb-3">
 			<div dir="ltr">
-				<div id="marketgraph" class="apex-charts" dir="ltr"></div>
-
+				<div id="marketgraph" class="apex-charts" dir="ltr" />
 			</div>
 		</CardBody>
 	</Card>

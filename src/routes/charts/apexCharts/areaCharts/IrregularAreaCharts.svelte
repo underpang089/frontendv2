@@ -1,8 +1,8 @@
 <script>
-	import {onMount} from 'svelte';
+	import { onMount } from "svelte";
 	import allseries from "../series";
 	import dayjs from "dayjs";
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 	export let dataColors;
 
 	function getChartColorsArray(colors) {
@@ -159,9 +159,12 @@
 		colors: BasicAreaChartsColors,
 	};
 	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#irregularareacharts"), options)
-  		chart.render()
-	})
+		const chart = new ApexCharts(
+			document.querySelector("#irregularareacharts"),
+			options
+		);
+		chart.render();
+	});
 </script>
 
-<div id="irregularareacharts" class="apex-charts" dir="ltr"></div>
+<div id="irregularareacharts" class="apex-charts" dir="ltr" />

@@ -3,7 +3,7 @@
 	import dayjs from "dayjs";
 	export let dataColors;
 
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 	function getChartColorsArray(colors) {
 		if (browser) {
 			return colors.map(function (value) {

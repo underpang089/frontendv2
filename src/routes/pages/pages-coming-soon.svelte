@@ -3,7 +3,7 @@
     import { Col, Container, Input, InputGroup, Row } from "sveltestrap";
     //import images
     import comingsoon from "../../assets/images/comingsoon.png";
-    import { browser } from "$app/env";
+    import { browser } from "$app/environment";
 
     // Set the date we're counting down to
     var countDownDate = new Date("Jan 1, 2023").getTime();

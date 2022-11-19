@@ -1,6 +1,6 @@
 <script>
 	let isFullScreenMode = true;
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 
 	function toggleFullscreen() {
 		if (browser) {

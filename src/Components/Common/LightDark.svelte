@@ -1,13 +1,13 @@
 <script>
-    import { browser } from "$app/env";
-    
+    import { browser } from "$app/environment";
+
     function setLayoutMode(mode, modeType, modeTypeId, html) {
-    var isModeTypeId = document.getElementById(modeTypeId);
-    html.setAttribute(mode, modeType);
-    if (isModeTypeId) {
-      document.getElementById(modeTypeId).click();
+        var isModeTypeId = document.getElementById(modeTypeId);
+        html.setAttribute(mode, modeType);
+        if (isModeTypeId) {
+            document.getElementById(modeTypeId).click();
+        }
     }
-  }
 
     function onChangeLayoutMode() {
         if (browser) {

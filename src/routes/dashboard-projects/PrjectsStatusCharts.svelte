@@ -1,7 +1,7 @@
 <script>
-	import {onMount} from 'svelte'; 
+    import { onMount } from "svelte";
     export let dataColors;
-    import { browser } from "$app/env";
+    import { browser } from "$app/environment";
     function getChartColorsArray(colors) {
         if (browser) {
             return colors.map(function (value) {
@@ -36,7 +36,7 @@
             type: "donut",
             height: 230,
         },
-        series : [125, 42, 58, 89],
+        series: [125, 42, 58, 89],
         plotOptions: {
             pie: {
                 size: 100,
@@ -46,7 +46,7 @@
                     size: "90%",
                     labels: {
                         show: false,
-                    }
+                    },
                 },
             },
         },
@@ -58,14 +58,17 @@
         },
         stroke: {
             lineCap: "round",
-            width: 0
+            width: 0,
         },
         colors: donutchartProjectsStatusColors,
     };
-	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#prjectstatuscharts"), options)
-  		chart.render()
-	})
+    onMount(() => {
+        const chart = new ApexCharts(
+            document.querySelector("#prjectstatuscharts"),
+            options
+        );
+        chart.render();
+    });
 </script>
 
-<div id="prjectstatuscharts" class="apex-charts" dir="ltr"></div>
+<div id="prjectstatuscharts" class="apex-charts" dir="ltr" />

@@ -1,7 +1,7 @@
 <script>
-	import {onMount} from 'svelte';
+	import { onMount } from "svelte";
 	export let dataColors;
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 
 	function getChartColorsArray(colors) {
 		if (browser) {
@@ -92,9 +92,12 @@
 		colors: chartColumnStacked100Colors,
 	};
 	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#stackedcolumn2"), options)
-  		chart.render()
-	})
+		const chart = new ApexCharts(
+			document.querySelector("#stackedcolumn2"),
+			options
+		);
+		chart.render();
+	});
 </script>
 
-<div id="stackedcolumn2" class="apex-charts" dir="ltr"></div>
+<div id="stackedcolumn2" class="apex-charts" dir="ltr" />

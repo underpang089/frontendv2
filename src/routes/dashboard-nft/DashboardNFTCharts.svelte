@@ -1,6 +1,6 @@
 <script>
     import { onMount } from "svelte";
-    import { browser } from "$app/env";
+    import { browser } from "$app/environment";
     export let dataColors;
 
     function getChartColorsArray(colors) {
@@ -35,7 +35,7 @@
 
     var options = {
         chart: {
-            id:"dashboardnftcharts",
+            id: "dashboardnftcharts",
             height: 350,
             type: "line",
             zoom: {
@@ -52,18 +52,20 @@
             curve: "smooth",
             width: 3,
         },
-        series: [{
-            name: "Artwork",
-            data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
-        },
-        {
-            name: "Auction",
-            data: [40, 120, 83, 45, 31, 74, 35, 34, 78]
-        },
-        {
-            name: "Creators",
-            data: [95, 35, 20, 130, 64, 22, 43, 45, 31]
-        }],
+        series: [
+            {
+                name: "Artwork",
+                data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+            },
+            {
+                name: "Auction",
+                data: [40, 120, 83, 45, 31, 74, 35, 34, 78],
+            },
+            {
+                name: "Creators",
+                data: [95, 35, 20, 130, 64, 22, 43, 45, 31],
+            },
+        ],
         colors: MarketplaceChartColors,
         xaxis: {
             categories: [
@@ -81,7 +83,10 @@
     };
 
     onMount(() => {
-        const chart = new ApexCharts(document.querySelector("#dashboardnftcharts"),options);
+        const chart = new ApexCharts(
+            document.querySelector("#dashboardnftcharts"),
+            options
+        );
         chart.render();
     });
 </script>

@@ -1,9 +1,17 @@
 <script>
 	import Link from "svelte-link";
-	import { Card, CardBody, Col, Container, Row, Button,Label } from "sveltestrap";
+	import {
+		Card,
+		CardBody,
+		Col,
+		Container,
+		Row,
+		Button,
+		Label,
+	} from "sveltestrap";
 	import ParticlesAuth from "../ParticlesAuth.svelte";
 	import logoLight from "../../../assets/images/logo-light.png";
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 
 	const moveToNext = (value, count) => {
 		if (browser) {
@@ -47,7 +55,8 @@
 							<CardBody class="p-4">
 								<div class="mb-4">
 									<div class="avatar-lg mx-auto">
-										<div class="avatar-title bg-light text-primary display-5 rounded-circle"
+										<div
+											class="avatar-title bg-light text-primary display-5 rounded-circle"
 										>
 											<i class="ri-mail-line" />
 										</div>
@@ -55,7 +64,8 @@
 								</div>
 
 								<div class="p-2 mt-4">
-									<div class="text-muted text-center mb-4 mx-lg-3"
+									<div
+										class="text-muted text-center mb-4 mx-lg-3"
 									>
 										<h4 class="">Verify Your Email</h4>
 										<p>

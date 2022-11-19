@@ -1,6 +1,6 @@
 <script>
-	import {onMount} from 'svelte';
-	import { browser } from "$app/env";
+	import { onMount } from "svelte";
+	import { browser } from "$app/environment";
 	export let dataColors;
 
 	function getChartColorsArray(colors) {
@@ -110,9 +110,12 @@
 		colors: chartStackedBarColors,
 	};
 	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#stackedchart"), options)
-  		chart.render()
-	})
+		const chart = new ApexCharts(
+			document.querySelector("#stackedchart"),
+			options
+		);
+		chart.render();
+	});
 </script>
 
-<div id="stackedchart" class="apex-charts" dir="ltr"></div>
+<div id="stackedchart" class="apex-charts" dir="ltr" />

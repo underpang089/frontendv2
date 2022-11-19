@@ -5,7 +5,7 @@
 	import Link from "svelte-link";
 	import logoSm from "../assets/images/logo-sm.png";
 	import { _ } from "svelte-i18n";
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 	import { page } from "$app/stores";
 	import VerticalLayout from "./VerticalLayout.svelte";
 
@@ -78,31 +78,57 @@
 			// parentCollapseDiv.setAttribute("aria-expanded", "true");
 			var parent = parentCollapseDiv.parentElement;
 			var children = parentCollapseDiv.getAttribute("childitem");
-			if(children) {
+			if (children) {
 				document.getElementById(children).classList.add("active");
-				document.getElementById(children).setAttribute("aria-expanded", "true");
+				document
+					.getElementById(children)
+					.setAttribute("aria-expanded", "true");
 			} else {
-				(parentCollapseDiv.parentElement.children[0]) ? parentCollapseDiv.parentElement.children[0].classList.add("active") : "";
-				(parentCollapseDiv.parentElement.children[0]) ? parentCollapseDiv.parentElement.children[0].setAttribute("aria-expanded", "true") : "";
-				
+				parentCollapseDiv.parentElement.children[0]
+					? parentCollapseDiv.parentElement.children[0].classList.add(
+							"active"
+					  )
+					: "";
+				parentCollapseDiv.parentElement.children[0]
+					? parentCollapseDiv.parentElement.children[0].setAttribute(
+							"aria-expanded",
+							"true"
+					  )
+					: "";
 			}
 			if (parent.closest(".collapse.menu-dropdown")) {
 				parent.closest(".collapse.menu-dropdown").classList.add("show"); // 2nd parent
-				parent.closest(".collapse.menu-dropdown").setAttribute("aria-expanded", "true");
-				var parentElementDiv = parent.closest(".collapse.menu-dropdown");
+				parent
+					.closest(".collapse.menu-dropdown")
+					.setAttribute("aria-expanded", "true");
+				var parentElementDiv = parent.closest(
+					".collapse.menu-dropdown"
+				);
 				if (parentElementDiv) {
 					parentElementDiv.classList.add("show");
-					parentElementDiv.parentElement.children[0].setAttribute("aria-expanded", "true");
-					parentElementDiv.parentElement.children[0].classList.add("active");
-					if(parentElementDiv.parentElement.closest(".collapse.menu-dropdown")) {
-						var parentParent = parentElementDiv.parentElement.closest(".collapse.menu-dropdown");
+					parentElementDiv.parentElement.children[0].setAttribute(
+						"aria-expanded",
+						"true"
+					);
+					parentElementDiv.parentElement.children[0].classList.add(
+						"active"
+					);
+					if (
+						parentElementDiv.parentElement.closest(
+							".collapse.menu-dropdown"
+						)
+					) {
+						var parentParent =
+							parentElementDiv.parentElement.closest(
+								".collapse.menu-dropdown"
+							);
 						parentParent.classList.add("show");
-						// parentParent.setAttribute("aria-expanded", "true");	
+						// parentParent.setAttribute("aria-expanded", "true");
 						var id = parentParent.getAttribute("id");
 						activateIconSidebarActive(id);
 					} else {
 						var id = parentElementDiv.getAttribute("id");
-						activateIconSidebarActive(id);	
+						activateIconSidebarActive(id);
 					}
 				} else {
 					var id = parent.getAttribute("id");
@@ -121,7 +147,9 @@
 
 	function activateIconSidebarActive(id) {
 		if (browser) {
-			var menu = document.querySelector("#two-column-menu a[subitems='" + id + "'].nav-icon");
+			var menu = document.querySelector(
+				"#two-column-menu a[subitems='" + id + "'].nav-icon"
+			);
 			if (menu !== null) {
 				menu.classList.add("active");
 			}
@@ -182,17 +210,35 @@
 		initMenu();
 	});
 
-	function changeClassAttribute(e, attribute, child = null, subchild = null, subsubchild = null) {
+	function changeClassAttribute(
+		e,
+		attribute,
+		child = null,
+		subchild = null,
+		subsubchild = null
+	) {
 		document.body.classList.remove("twocolumn-panel");
 		e ? e.preventDefault() : "";
 		if (!e) {
-			if (subchild && subchild === current_subchild && subsubchild == null) {
+			if (
+				subchild &&
+				subchild === current_subchild &&
+				subsubchild == null
+			) {
 				current_subchild = null;
-			} else if ( attribute === current && child === null && subchild === null ) {
+			} else if (
+				attribute === current &&
+				child === null &&
+				subchild === null
+			) {
 				current = null;
 				current_child = null;
 				current_subchild = null;
-			} else if ( attribute === current && child === current_child && subchild !== null ) {
+			} else if (
+				attribute === current &&
+				child === current_child &&
+				subchild !== null
+			) {
 				current = attribute;
 				current_child = child;
 				current_subchild = subchild;
@@ -202,11 +248,11 @@
 				current_subchild = subchild;
 				current_sub_subchild = subsubchild;
 			}
-			if(subsubchild != null) {
+			if (subsubchild != null) {
 				current_sub_subchild = subsubchild;
 			}
 
-			if(attribute === 'widgets'){
+			if (attribute === "widgets") {
 				document.body.classList.add("twocolumn-panel");
 			}
 
@@ -280,7 +326,8 @@
 
 <svelte:head>
 	<script src="//unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
-	<script src="//cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+	<script
+		src="//cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
 </svelte:head>
 
 {#if menu == "twocolumn"}
@@ -296,7 +343,7 @@
 							{#if item.subItems}
 								<li>
 									<a
-										href="{null}"
+										href={null}
 										subitems={item.id}
 										class={current === item.id
 											? "nav-icon active"
@@ -343,13 +390,28 @@
 											<li class="nav-item">
 												<Link
 													id={subItem.id}
-													class={current_child === subItem.id ? "nav-link active" : "nav-link"}
+													class={current_child ===
+													subItem.id
+														? "nav-link active"
+														: "nav-link"}
 													href={subItem.link}
-													on:click={() => changeClassAttribute("", item.id, subItem.id)}>
+													on:click={() =>
+														changeClassAttribute(
+															"",
+															item.id,
+															subItem.id
+														)}
+												>
 													{$_(subItem.label)}
 													{#if subItem.badgeName}
-														<span class={"badge badge-pill bg-" + subItem.badgeColor} data-key="t-new">
-															{$_( subItem.badgeName )}
+														<span
+															class={"badge badge-pill bg-" +
+																subItem.badgeColor}
+															data-key="t-new"
+														>
+															{$_(
+																subItem.badgeName
+															)}
 														</span>
 													{/if}
 												</Link>
@@ -357,65 +419,137 @@
 										{:else}
 											<li class="nav-item">
 												<Link
-													class={current_child === subItem.id ? "nav-link active" : "nav-link"}
-													href="{null}"
+													class={current_child ===
+													subItem.id
+														? "nav-link active"
+														: "nav-link"}
+													href={null}
 													data-bs-toggle="collapse"
-													aria-expanded={current_child === subItem.id ? "true" : "false"}
+													aria-expanded={current_child ===
+													subItem.id
+														? "true"
+														: "false"}
 													id={subItem.id}
 													on:click={(e) =>
-														changeClassAttribute(e, item.id, subItem.id )}
+														changeClassAttribute(
+															e,
+															item.id,
+															subItem.id
+														)}
 												>
 													{$_(subItem.label)}
 												</Link>
 												<div
-													class={current_child === subItem.id ? "collapse menu-dropdown show" : "collapse menu-dropdown"}
+													class={current_child ===
+													subItem.id
+														? "collapse menu-dropdown show"
+														: "collapse menu-dropdown"}
 													id={subItem.stateVariables}
-													istrue={current_child === subItem.id}
+													istrue={current_child ===
+														subItem.id}
 												>
-													<ul class="nav nav-sm flex-column">
+													<ul
+														class="nav nav-sm flex-column"
+													>
 														{#if subItem.childItems}
 															{#each subItem.childItems as childItem}
-															{#if !childItem.childItems}
-																<li class="nav-item">
-																	<a
-																		on:click={(e) => changeClassAttribute("",item.id, subItem.id, childItem.id )}
-																		class={current_subchild === childItem.id ? "nav-link active" : "nav-link"}
-																		href={childItem.link}
-																		id={childItem.id}
+																{#if !childItem.childItems}
+																	<li
+																		class="nav-item"
 																	>
-																		{childItem.label}
-																		{#if childItem.isChildItem}
-																			<span class="badge badge-pill bg-danger" data-key="t-new">New</span>
-																		{/if}
-																	</a>
+																		<a
+																			on:click={(
+																				e
+																			) =>
+																				changeClassAttribute(
+																					"",
+																					item.id,
+																					subItem.id,
+																					childItem.id
+																				)}
+																			class={current_subchild ===
+																			childItem.id
+																				? "nav-link active"
+																				: "nav-link"}
+																			href={childItem.link}
+																			id={childItem.id}
+																		>
+																			{childItem.label}
+																			{#if childItem.isChildItem}
+																				<span
+																					class="badge badge-pill bg-danger"
+																					data-key="t-new"
+																					>New</span
+																				>
+																			{/if}
+																		</a>
 																	</li>
 																{:else}
-																<span class={current_subchild === childItem.id ? "nav-link active" : "nav-link"}
-																	id={childItem.id}
-																	data-bs-toggle="collapse"
-																	aria-expanded={current_subchild === childItem.id ? "true" : "false"}
-																	on:click={(e) => changeClassAttribute(e,item.id, subItem.id, childItem.id)}>
-																		{$_(childItem.label)}
+																	<span
+																		class={current_subchild ===
+																		childItem.id
+																			? "nav-link active"
+																			: "nav-link"}
+																		id={childItem.id}
+																		data-bs-toggle="collapse"
+																		aria-expanded={current_subchild ===
+																		childItem.id
+																			? "true"
+																			: "false"}
+																		on:click={(
+																			e
+																		) =>
+																			changeClassAttribute(
+																				e,
+																				item.id,
+																				subItem.id,
+																				childItem.id
+																			)}
+																	>
+																		{$_(
+																			childItem.label
+																		)}
 																	</span>
-																		<div
-																			class="collapse menu-dropdown {current_subchild === childItem.id ? 'show' : ''}"
-																			id={item.id}
-																			childItem={childItem.id}
+																	<div
+																		class="collapse menu-dropdown {current_subchild ===
+																		childItem.id
+																			? 'show'
+																			: ''}"
+																		id={item.id}
+																		childItem={childItem.id}
+																	>
+																		<ul
+																			class="nav nav-sm flex-column"
 																		>
-																			<ul class="nav nav-sm flex-column">
-																				{#each childItem.childItems as subChildItem}
-																					<li class="nav-item">
-																						<a
-																							class={current_sub_subchild === subChildItem.id ? "nav-link active here" : "nav-link else"}
-																							href={subChildItem.link}
-																							on:click={(e) => changeClassAttribute("",item.id, subItem.id, childItem.id, subChildItem.id )}
-																						>
-																							{$_( subChildItem.label )}
-																						</a>
-																					</li>
-																				{/each}
-																			</ul>
-																		</div>
+																			{#each childItem.childItems as subChildItem}
+																				<li
+																					class="nav-item"
+																				>
+																					<a
+																						class={current_sub_subchild ===
+																						subChildItem.id
+																							? "nav-link active here"
+																							: "nav-link else"}
+																						href={subChildItem.link}
+																						on:click={(
+																							e
+																						) =>
+																							changeClassAttribute(
+																								"",
+																								item.id,
+																								subItem.id,
+																								childItem.id,
+																								subChildItem.id
+																							)}
+																					>
+																						{$_(
+																							subChildItem.label
+																						)}
+																					</a>
+																				</li>
+																			{/each}
+																		</ul>
+																	</div>
 																{/if}
 															{/each}
 														{/if}

@@ -1,8 +1,8 @@
 <script>
-	import {onMount} from 'svelte';
+	import { onMount } from "svelte";
 	import allseries from "../series";
 	export let dataColors;
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 
 	function getChartColorsArray(colors) {
 		if (browser) {
@@ -141,9 +141,12 @@
 		colors: chartScatterDateTimeColors,
 	};
 	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#datetimescatterchart"), options)
-  		chart.render()
-	})
+		const chart = new ApexCharts(
+			document.querySelector("#datetimescatterchart"),
+			options
+		);
+		chart.render();
+	});
 </script>
 
-<div id="datetimescatterchart" class="apex-charts" dir="ltr"></div>
+<div id="datetimescatterchart" class="apex-charts" dir="ltr" />

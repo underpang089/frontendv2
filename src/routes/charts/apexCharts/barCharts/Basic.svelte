@@ -1,11 +1,10 @@
 <script>
-	import {onMount} from 'svelte';
+	import { onMount } from "svelte";
 	export let dataColors;
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 
 	function getChartColorsArray(colors) {
 		if (browser) {
-			
 			return colors.map(function (value) {
 				var newValue = value.replace(" ", "");
 				if (newValue.indexOf(",") === -1) {
@@ -76,9 +75,12 @@
 		},
 	};
 	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#basicbarchart"), options)
-  		chart.render()
-	})
+		const chart = new ApexCharts(
+			document.querySelector("#basicbarchart"),
+			options
+		);
+		chart.render();
+	});
 </script>
 
-<div id="basicbarchart" class="apex-charts" dir="ltr"></div>
+<div id="basicbarchart" class="apex-charts" dir="ltr" />

@@ -1,7 +1,7 @@
 <script>
 	import Line from "svelte-chartjs/src/Line.svelte";
 	export let dataColors;
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 
 	function getChartColorsArray(colors) {
 		if (browser) {

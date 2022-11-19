@@ -1,7 +1,7 @@
 <script>
-    import {onMount} from 'svelte';
+    import { onMount } from "svelte";
     export let dataColors;
-    import { browser } from "$app/env";
+    import { browser } from "$app/environment";
 
     function getChartColorsArray(colors) {
         if (browser) {
@@ -49,10 +49,13 @@
         labels: ["Cricket"],
         colors: chartRadialbarBasicColors,
     };
-	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#simpleradialbarchart"), options)
-  		chart.render()
-	})
+    onMount(() => {
+        const chart = new ApexCharts(
+            document.querySelector("#simpleradialbarchart"),
+            options
+        );
+        chart.render();
+    });
 </script>
 
-<div id="simpleradialbarchart" class="apex-charts" dir="ltr"></div>
+<div id="simpleradialbarchart" class="apex-charts" dir="ltr" />

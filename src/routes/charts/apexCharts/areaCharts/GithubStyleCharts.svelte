@@ -1,11 +1,10 @@
 <script>
-	import {onMount} from 'svelte';
+	import { onMount } from "svelte";
 	import allseries from "../series";
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 	export let dataColors;
 
 	function getChartColorsArray(colors) {
-		
 		if (browser) {
 			return colors.map(function (value) {
 				var newValue = value.replace(" ", "");
@@ -100,9 +99,12 @@
 		},
 	};
 	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#githubstylechart"), options)
-  		chart.render()
-	})
+		const chart = new ApexCharts(
+			document.querySelector("#githubstylechart"),
+			options
+		);
+		chart.render();
+	});
 </script>
 
-<div id="githubstylechart" class="apex-charts" dir="ltr"></div>
+<div id="githubstylechart" class="apex-charts" dir="ltr" />

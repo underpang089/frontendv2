@@ -1,9 +1,9 @@
 <script>
-	import {onMount} from 'svelte';
+	import { onMount } from "svelte";
 	import allseries from "../series";
 	export let dataColors;
-	import { browser } from "$app/env";
-	import logosm from '../../../../assets/images/logo-sm.png'
+	import { browser } from "$app/environment";
+	import logosm from "../../../../assets/images/logo-sm.png";
 
 	function getChartColorsArray(colors) {
 		if (browser) {
@@ -173,9 +173,12 @@
 		},
 	};
 	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#linewithannotations"), options)
-  		chart.render()
-	})
+		const chart = new ApexCharts(
+			document.querySelector("#linewithannotations"),
+			options
+		);
+		chart.render();
+	});
 </script>
 
-<div id="linewithannotations" class="apex-charts" dir="ltr"></div>
+<div id="linewithannotations" class="apex-charts" dir="ltr" />

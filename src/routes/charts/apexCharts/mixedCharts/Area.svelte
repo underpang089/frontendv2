@@ -1,8 +1,8 @@
 <script>
-	import {onMount} from 'svelte';
+	import { onMount } from "svelte";
 	import allseries from "../series";
 	export let dataColors;
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 
 	function getChartColorsArray(colors) {
 		if (browser) {
@@ -105,9 +105,12 @@
 		colors: chartLineAreaColors,
 	};
 	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#areamixedchart"), options)
-  		chart.render()
-	})
+		const chart = new ApexCharts(
+			document.querySelector("#areamixedchart"),
+			options
+		);
+		chart.render();
+	});
 </script>
 
-<div id="areamixedchart" class="apex-charts" dir="ltr"></div>
+<div id="areamixedchart" class="apex-charts" dir="ltr" />

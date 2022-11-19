@@ -1,9 +1,9 @@
 <script>
-	import {onMount} from 'svelte';
+	import { onMount } from "svelte";
 	import dayjs from "dayjs";
 
 	export let dataColors;
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 
 	function getChartColorsArray(colors) {
 		if (browser) {
@@ -20,7 +20,9 @@
 				} else {
 					var val = value.split(",");
 					if (val.length === 2) {
-						var rgbaColor = getComputedStyle(document.documentElement).getPropertyValue(val[0]);
+						var rgbaColor = getComputedStyle(
+							document.documentElement
+						).getPropertyValue(val[0]);
 						rgbaColor = "rgba(" + rgbaColor + "," + val[1] + ")";
 						return rgbaColor;
 					} else {
@@ -135,9 +137,12 @@
 		colors: chartTimelineMultiSeriesColors,
 	};
 	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#multiserieschart"), options)
-  		chart.render()
-	})
+		const chart = new ApexCharts(
+			document.querySelector("#multiserieschart"),
+			options
+		);
+		chart.render();
+	});
 </script>
 
-<div id="multiserieschart" class="apex-charts" dir="ltr"></div>
+<div id="multiserieschart" class="apex-charts" dir="ltr" />

@@ -7,8 +7,8 @@
 	} from "sveltestrap";
 	import { setupI18n } from "../../services/i18n";
 	import languages from "../../common/data/languages";
-	import { browser } from "$app/env";
-	import usimg from '../../assets/images/flags/us.svg'
+	import { browser } from "$app/environment";
+	import usimg from "../../assets/images/flags/us.svg";
 
 	export let selectedLang = browser
 		? localStorage.getItem("I18N_LANGUAGE") || "en"

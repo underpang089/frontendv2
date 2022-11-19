@@ -1,7 +1,7 @@
 <script>
-  import {onMount} from 'svelte'; 
-  export let dataColors;
-    import { browser } from "$app/env";
+    import { onMount } from "svelte";
+    export let dataColors;
+    import { browser } from "$app/environment";
     function getChartColorsArray(colors) {
         if (browser) {
             return colors.map(function (value) {
@@ -37,7 +37,7 @@
             type: "donut",
             height: 224,
         },
-        series : [19405, 40552, 15824, 30635],
+        series: [19405, 40552, 15824, 30635],
         plotOptions: {
             pie: {
                 size: 100,
@@ -49,32 +49,39 @@
                         show: true,
                         name: {
                             show: true,
-                            fontSize: '18px',
+                            fontSize: "18px",
                             offsetY: -5,
                         },
                         value: {
                             show: true,
-                            fontSize: '20px',
-                            color: '#343a40',
+                            fontSize: "20px",
+                            color: "#343a40",
                             fontWeight: 500,
                             offsetY: 5,
                             formatter: function (val) {
                                 return "$" + val;
-                            }
+                            },
                         },
                         total: {
                             show: true,
-                            fontSize: '13px',
-                            label: 'Total value',
-                            color: '#9599ad',
+                            fontSize: "13px",
+                            label: "Total value",
+                            color: "#9599ad",
                             fontWeight: 500,
                             formatter: function (w) {
-                                return "$" + w.globals.seriesTotals.reduce(function (a, b) {
-                                    return a + b;
-                                }, 0);
-                            }
-                        }
-                    }
+                                return (
+                                    "$" +
+                                    w.globals.seriesTotals.reduce(function (
+                                        a,
+                                        b
+                                    ) {
+                                        return a + b;
+                                    },
+                                    0)
+                                );
+                            },
+                        },
+                    },
                 },
             },
         },
@@ -88,19 +95,22 @@
             labels: {
                 formatter: function (value) {
                     return "$" + value;
-                }
-            }
+                },
+            },
         },
         stroke: {
             lineCap: "round",
-            width: 2
+            width: 2,
         },
         colors: donutchartportfolioColors,
     };
-	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#portfoliochart"), options)
-  		chart.render()
-	})
+    onMount(() => {
+        const chart = new ApexCharts(
+            document.querySelector("#portfoliochart"),
+            options
+        );
+        chart.render();
+    });
 </script>
 
-<div id="portfoliochart" class="apex-charts" dir="ltr"></div>
+<div id="portfoliochart" class="apex-charts" dir="ltr" />

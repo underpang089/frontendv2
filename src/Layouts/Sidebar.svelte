@@ -5,7 +5,7 @@
 	import VerticalLayout from "./VerticalLayout.svelte";
 	import HorizontalLayout from "./HorizontalLayout.svelte";
 	import TwoColumnLayout from "./TwoColumnLayout.svelte";
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 
 	onMount(async () => {
 		if (browser) {
@@ -19,23 +19,40 @@
 		}
 	});
 	export let layoutType;
-	import logosm from '../assets/images/logo-sm.png'
-	import logodark from '../assets/images/logo-dark.png'
-	import logolight from '../assets/images/logo-light.png'
+	import logosm from "../assets/images/logo-sm.png";
+	import logodark from "../assets/images/logo-dark.png";
+	import logolight from "../assets/images/logo-light.png";
 
-	const verticalSidebarClass = () =>{
-        if (document.documentElement.getAttribute('data-sidebar-size') === 'sm-hover') {
-            document.documentElement.setAttribute('data-sidebar-size', 'sm-hover-active');
-            } else if (document.documentElement.getAttribute('data-sidebar-size') === 'sm-hover-active') {
-            document.documentElement.setAttribute('data-sidebar-size', 'sm-hover');
-            } else {
-            document.documentElement.setAttribute('data-sidebar-size', 'sm-hover');
-        }
-     }
+	const verticalSidebarClass = () => {
+		if (
+			document.documentElement.getAttribute("data-sidebar-size") ===
+			"sm-hover"
+		) {
+			document.documentElement.setAttribute(
+				"data-sidebar-size",
+				"sm-hover-active"
+			);
+		} else if (
+			document.documentElement.getAttribute("data-sidebar-size") ===
+			"sm-hover-active"
+		) {
+			document.documentElement.setAttribute(
+				"data-sidebar-size",
+				"sm-hover"
+			);
+		} else {
+			document.documentElement.setAttribute(
+				"data-sidebar-size",
+				"sm-hover"
+			);
+		}
+	};
 </script>
+
 <svelte:head>
 	<script src="//unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
-	<script src="//cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+	<script
+		src="//cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
 </svelte:head>
 <div class="app-menu navbar-menu">
 	<!-- LOGO -->
@@ -46,11 +63,7 @@
 				<img src={logosm} alt="" height="22" />
 			</span>
 			<span class="logo-lg">
-				<img
-					src={logodark}
-					alt=""
-					height="17"
-				/>
+				<img src={logodark} alt="" height="17" />
 			</span>
 		</a>
 		<!-- Light Logo-->
@@ -59,21 +72,17 @@
 				<img src={logosm} alt="" height="22" />
 			</span>
 			<span class="logo-lg">
-				<img
-					src={logolight}
-					alt=""
-					height="17"
-				/>
+				<img src={logolight} alt="" height="17" />
 			</span>
 		</a>
 		<button
-		type="button"
-		class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
-		id="vertical-hover"
-		on:click="{verticalSidebarClass}"
-	>
-		<i class="ri-record-circle-line" />
-	</button>
+			type="button"
+			class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+			id="vertical-hover"
+			on:click={verticalSidebarClass}
+		>
+			<i class="ri-record-circle-line" />
+		</button>
 	</div>
 
 	{#if layoutType === "horizontal"}
@@ -99,7 +108,7 @@
 		</div>
 	{/if}
 
-	<div class="sidebar-background"></div>
+	<div class="sidebar-background" />
 </div>
 
 <div class="vertical-overlay" />

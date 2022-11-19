@@ -1,6 +1,6 @@
 <script>
-	import {onMount} from 'svelte';
-	import { browser } from "$app/env";
+	import { onMount } from "svelte";
+	import { browser } from "$app/environment";
 
 	export let dataColors;
 
@@ -107,9 +107,12 @@
 		},
 	};
 	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#reversedchart"), options)
-  		chart.render()
-	})
+		const chart = new ApexCharts(
+			document.querySelector("#reversedchart"),
+			options
+		);
+		chart.render();
+	});
 </script>
 
-<div id="reversedchart" class="apex-charts" dir="ltr"></div>
+<div id="reversedchart" class="apex-charts" dir="ltr" />

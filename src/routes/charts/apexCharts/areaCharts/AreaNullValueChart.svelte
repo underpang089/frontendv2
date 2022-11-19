@@ -1,11 +1,10 @@
 <script>
-	import {onMount} from 'svelte';
+	import { onMount } from "svelte";
 	export let dataColors;
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 
 	function getChartColorsArray(colors) {
 		if (browser) {
-			
 			return colors.map(function (value) {
 				var newValue = value.replace(" ", "");
 				if (newValue.indexOf(",") === -1) {
@@ -192,9 +191,12 @@
 		colors: BasicAreaChartsColors,
 	};
 	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#areanullvaluechart"), options)
-  		chart.render()
-	})
+		const chart = new ApexCharts(
+			document.querySelector("#areanullvaluechart"),
+			options
+		);
+		chart.render();
+	});
 </script>
 
-<div id="areanullvaluechart" class="apex-charts" dir="ltr"></div>
+<div id="areanullvaluechart" class="apex-charts" dir="ltr" />

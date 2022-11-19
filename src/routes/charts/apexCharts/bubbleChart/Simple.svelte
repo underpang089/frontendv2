@@ -1,7 +1,7 @@
 <script>
-	import {onMount} from 'svelte';
+	import { onMount } from "svelte";
 	export let dataColors;
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 
 	function getChartColorsArray(colors) {
 		if (browser) {
@@ -110,9 +110,12 @@
 		colors: chartBubbleSimpleColors,
 	};
 	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#simplebubblechart"), options)
-  		chart.render()
-	})
+		const chart = new ApexCharts(
+			document.querySelector("#simplebubblechart"),
+			options
+		);
+		chart.render();
+	});
 </script>
 
-<div id="simplebubblechart" class="apex-charts" dir="ltr"></div>
+<div id="simplebubblechart" class="apex-charts" dir="ltr" />

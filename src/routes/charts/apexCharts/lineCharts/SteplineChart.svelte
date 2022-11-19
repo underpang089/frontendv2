@@ -1,9 +1,9 @@
-<script>
-    import {onMount} from 'svelte';
+<script lang="ts">
+    import { onMount } from "svelte";
     export let dataColors;
-    import { browser } from "$app/env";
+    import { browser } from "$app/environment";
 
-    function getChartColorsArray(colors) {
+    function getChartColorsArray(colors: Array<string>) {
         if (browser) {
             return colors.map(function (value) {
                 var newValue = value.replace(" ", "");
@@ -63,10 +63,13 @@
         },
         colors: SteplineChartColors,
     };
-	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#SteplineChart"), options)
-  		chart.render()
-	})
+    onMount(() => {
+        const chart = new ApexCharts(
+            document.querySelector("#SteplineChart"),
+            options
+        );
+        chart.render();
+    });
 </script>
 
-<div id="SteplineChart" class="apex-charts" dir="ltr"></div>
+<div id="SteplineChart" class="apex-charts" dir="ltr" />

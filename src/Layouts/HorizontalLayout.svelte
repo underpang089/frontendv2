@@ -4,7 +4,7 @@
 	import data from "./LayoutMenuData";
 	import Link from "svelte-link";
 	import { _ } from "svelte-i18n";
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 	import { page } from "$app/stores";
 
 	const navData = data.Navdata;
@@ -144,9 +144,11 @@
 		});
 	};
 </script>
+
 <svelte:head>
 	<script src="//unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
-	<script src="//cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+	<script
+		src="//cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
 </svelte:head>
 
 {#each menuItems as item}
@@ -220,7 +222,7 @@
 									<li class="nav-item">
 										<Link
 											class="nav-link not"
-											href="{null}"
+											href={null}
 											id={subItem.stateVariables}
 											data-bs-toggle="collapse"
 											on:click={callInitMenu}
@@ -257,7 +259,7 @@
 															>
 																<Link
 																	class="nav-link iopen"
-																	href="{null}"
+																	href={null}
 																	data-bs-toggle="collapse"
 																	id={subChildItem.stateVariables}
 																	on:click={callInitMenu}

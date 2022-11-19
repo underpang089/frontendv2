@@ -1,7 +1,7 @@
 <script>
-	import {onMount} from 'svelte';
+	import { onMount } from "svelte";
 	export let dataColors;
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 
 	import smallImage1 from "../../../../assets/images/small/img-1.jpg";
 	import smallImage2 from "../../../../assets/images/small/img-2.jpg";
@@ -82,9 +82,12 @@
 		],
 	};
 	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#imagepiechart"), options)
-  		chart.render()
-	})
+		const chart = new ApexCharts(
+			document.querySelector("#imagepiechart"),
+			options
+		);
+		chart.render();
+	});
 </script>
 
-<div id="imagepiechart" class="apex-charts" dir="ltr"></div>
+<div id="imagepiechart" class="apex-charts" dir="ltr" />

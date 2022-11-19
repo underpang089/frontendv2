@@ -1,7 +1,7 @@
 <script>
-	import {onMount} from 'svelte';
+	import { onMount } from "svelte";
 	export let dataColors;
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 
 	function getChartColorsArray(colors) {
 		if (browser) {
@@ -179,9 +179,12 @@
 		colors: chartTimelineAdvancedColors,
 	};
 	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#advancedtimelinechart"), options)
-  		chart.render()
-	})
+		const chart = new ApexCharts(
+			document.querySelector("#advancedtimelinechart"),
+			options
+		);
+		chart.render();
+	});
 </script>
 
-<div id="advancedtimelinechart" class="apex-charts" dir="ltr"></div>
+<div id="advancedtimelinechart" class="apex-charts" dir="ltr" />

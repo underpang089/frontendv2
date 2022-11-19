@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from "svelte";
 	export let dataColors;
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 
 	function getChartColorsArray(colors) {
 		if (browser) {
@@ -164,7 +164,10 @@
 				},
 			},
 		};
-		const chart = new ApexCharts(document.querySelector("#rangewithoutshades"),options);
+		const chart = new ApexCharts(
+			document.querySelector("#rangewithoutshades"),
+			options
+		);
 		chart.render();
 	});
 </script>

@@ -1,9 +1,9 @@
 <script>
-	import {onMount} from 'svelte';
+	import { onMount } from "svelte";
 	export let dataColors;
 	import avatar1 from "../../../../assets/images/users/avatar-1.jpg";
 	import avatar2 from "../../../../assets/images/users/avatar-2.jpg";
-	import { browser } from "$app/env";
+	import { browser } from "$app/environment";
 	function getChartColorsArray(colors) {
 		if (browser) {
 			return colors.map(function (value) {
@@ -125,9 +125,12 @@
 		},
 	};
 	onMount(() => {
-		const chart = new ApexCharts(document.querySelector("#imagesscatterchart"), options)
-  		chart.render()
-	})
+		const chart = new ApexCharts(
+			document.querySelector("#imagesscatterchart"),
+			options
+		);
+		chart.render();
+	});
 </script>
 
-<div id="imagesscatterchart" class="apex-charts" dir="ltr"></div>
+<div id="imagesscatterchart" class="apex-charts" dir="ltr" />
